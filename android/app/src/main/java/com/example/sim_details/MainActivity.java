@@ -87,7 +87,6 @@ public class MainActivity extends FlutterActivity {
                 List<SubscriptionInfo> subscriptionInfoList = subscriptionManager.getActiveSubscriptionInfoList();
 
                 if (subscriptionInfoList != null && !subscriptionInfoList.isEmpty()) {
-//                    for (SubscriptionInfo info : subscriptionInfoList) {
                     for (int i = 0; i < subscriptionInfoList.size(); i++) {
                         simData.put("simSlot" + i, subscriptionInfoList.get(i).getSimSlotIndex());
                         simData.put("carrierName" + i,  subscriptionInfoList.get(i).getCarrierName());
