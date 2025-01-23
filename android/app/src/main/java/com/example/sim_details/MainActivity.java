@@ -87,11 +87,12 @@ public class MainActivity extends FlutterActivity {
                 List<SubscriptionInfo> subscriptionInfoList = subscriptionManager.getActiveSubscriptionInfoList();
 
                 if (subscriptionInfoList != null && !subscriptionInfoList.isEmpty()) {
-                    for (SubscriptionInfo info : subscriptionInfoList) {
-                        simData.put("simSlot" + 0, info.getSimSlotIndex());
-                        simData.put("carrierName" + 0,  info.getCarrierName());
-                        simData.put("displayName" + 0, info.getDisplayName());
-                        simData.put("country" + 0, info.getCountryIso());
+//                    for (SubscriptionInfo info : subscriptionInfoList) {
+                    for (int i = 0; i < subscriptionInfoList.size(); i++) {
+                        simData.put("simSlot" + i, subscriptionInfoList.get(i).getSimSlotIndex());
+                        simData.put("carrierName" + i,  subscriptionInfoList.get(i).getCarrierName());
+                        simData.put("displayName" + i, subscriptionInfoList.get(i).getDisplayName());
+                        simData.put("country" + i, subscriptionInfoList.get(i).getCountryIso());
                     }
                     return simData;
                 } else {
